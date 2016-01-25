@@ -29,6 +29,7 @@ public class GoogleAppTracking extends CordovaPlugin {
 
     try {
       // see: https://developers.google.com/app-conversion-tracking/docs/android-conversion-tracking
+      AdWordsAutomatedUsageReporter.disableAutomatedUsageReporting(this.cordova.getActivity().getApplicationContext(), conversion_id);
       AdWordsConversionReporter.reportWithConversionId(
           this.cordova.getActivity().getApplicationContext(),
           conversion_id,
